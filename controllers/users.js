@@ -5,7 +5,7 @@ const NotFoundError = require("../utils/errors/NotFoundError");
 const BadRequestError = require("../utils/errors/BadRequestError");
 const UnauthorizedError = require("../utils/errors/UnauthorizedError");
 const ConflictError = require("../utils/errors/ConflictError");
-// const { JWT_SECRET } = require('../utils/config');
+const { JWT_SECRET } = require("../utils/config");
 
 const getCurrentUser = (req, res, next) => {
   const userId = req.user._id;
@@ -86,3 +86,5 @@ const login = (req, res, next) => {
       }
     });
 };
+
+module.exports = { getCurrentUser, login, createUser };
