@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const userRouter = require("./users");
 const newsRouter = require("./articles");
+
 const { login, createUser } = require("../controllers/users");
 const {
   validateUserBody,
