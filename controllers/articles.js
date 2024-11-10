@@ -19,11 +19,11 @@ const createArticle = (req, res, next) => {
   Article.create({
     keyword,
     title,
-    text: description,
-    date: publishedAt,
+    description,
+    publishedAt,
     source,
-    link: url,
-    image: urlToImage,
+    url,
+    urlToImage,
     owner,
   })
     .then((article) => res.status(201).send({ data: article }))

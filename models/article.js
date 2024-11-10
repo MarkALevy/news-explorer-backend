@@ -11,11 +11,11 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  text: {
+  description: {
     type: String,
     required: true,
   },
-  date: {
+  publishedAt: {
     type: String,
     required: true,
   },
@@ -23,7 +23,7 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  link: {
+  url: {
     type: String,
     required: true,
     validate: {
@@ -33,7 +33,7 @@ const articleSchema = new mongoose.Schema({
       message: "You must enter a valid URL",
     },
   },
-  image: {
+  urlToImage: {
     type: String,
     required: true,
     validate: {
