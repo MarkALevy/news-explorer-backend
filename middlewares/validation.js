@@ -19,14 +19,11 @@ module.exports.validateArticleBody = celebrate({
     description: Joi.string()
       .required()
       .messages({ "string.empty": 'The "text" field is required' }),
-    publishedAt: Joi.date()
+    publishedAt: Joi.string()
       .required()
-      .iso()
-      .messages(
-        { "string.empty": 'The "date" field is required' },
-        { "string.iso": 'The "date" field must be in valid format' },
-      ),
-    source: Joi.string()
+
+      .messages({ "string.empty": 'The "date" field is required' }),
+    source: Joi.object()
       .required()
       .messages({ "string.empty": 'The "source" field is required' }),
     url: Joi.string().required().custom(validateURL).messages({
@@ -37,6 +34,9 @@ module.exports.validateArticleBody = celebrate({
       "string.empty": 'The "image" field must be filled in',
       "string.uri": 'The "image" field must be a valid url',
     }),
+    isSaved: Joi.boolean()
+      .required()
+      .messages({ "string.empty": 'The "isSaved" field is required' }),
   }),
 });
 

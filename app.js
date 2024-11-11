@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-// const cors = require("cors");
+const cors = require("cors");
 const { errors } = require("celebrate");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
 const mainRouter = require("./routes/index");
@@ -20,16 +20,17 @@ mongoose
   })
   .catch(console.error);
 
-// app.use(
-//   cors({
-//     origin: [
-//       'https://news-explorer.serverpit.com',
-//       'https://www.news-explorer.serverpit.com',
-//       'https://api.news-explorer.serverpit.com',
-//     ],
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-//   })
-// );
+app.use(
+  cors({
+    origin: [
+      "https://news-explorer.serverpit.com",
+      "https://www.news-explorer.serverpit.com",
+      "https://api.news-explorer.serverpit.com",
+      "http://localhost:3000",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  }),
+);
 
 app.use(express.json());
 app.use(requestLogger);
