@@ -11,7 +11,7 @@ const {
   deleteArticle,
 } = require("../controllers/articles");
 
-router.get("/", getArticles);
+router.get("/", auth, getArticles);
 router.post("/", auth, validateArticleBody, createArticle);
 router.delete("/:articleId", auth, validateArticleId, deleteArticle);
 

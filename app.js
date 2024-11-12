@@ -26,6 +26,7 @@ app.use(
       "https://news-explorer.serverpit.com",
       "https://www.news-explorer.serverpit.com",
       "https://api.news-explorer.serverpit.com",
+      "http://localhost:3000",
     ],
     methods: ["GET", "POST", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
