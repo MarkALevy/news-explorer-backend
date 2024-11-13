@@ -10,7 +10,7 @@ const errorHandler = require("./middlewares/error-handler");
 const { dataBase } = require("./utils/config");
 
 const app = express();
-const { PORT = 3001 } = process.env;
+const { PORT = 3002 } = process.env;
 
 mongoose.set("strictQuery", true);
 mongoose
